@@ -685,6 +685,7 @@ async function handleSendTestNotificationAction({ data }) {
   const {
     tg_bot_token,
     tg_chat_id,
+    tg_thread_id,
     notification_webhook_enabled,
     notification_webhook_url,
     notification_webhook_method,
@@ -712,6 +713,7 @@ async function handleSendTestNotificationAction({ data }) {
     const result = await sendNotification({
       tg_bot_token,
       tg_chat_id: tg_chat_id || '',
+      tg_thread_id: tg_thread_id || '',
       notification_webhook_enabled: normalizeBooleanSetting(notification_webhook_enabled),
       notification_webhook_url: notification_webhook_url || '',
       notification_webhook_method: normalizeNotificationWebhookMethod(notification_webhook_method),
