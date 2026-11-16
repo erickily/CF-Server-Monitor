@@ -1029,6 +1029,7 @@ export async function sendNotification(settings, msg, notificationContext = {}) 
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           chat_id: settings.tg_chat_id,
+          ...(settings.tg_thread_id ? { message_thread_id: Number(settings.tg_thread_id) } : {}),
           text: formattedMsg
         })
       });
