@@ -298,6 +298,11 @@
               </button>
             </div>
           </div>
+
+          <div class="form-group flex-1">
+            <label class="form-label">Telegram 话题 ID</label>
+            <input type="text" name="tg_thread_id" autocomplete="off" v-model="settings.tg_thread_id" class="form-input" placeholder="可选，如 2（告警发到该话题；留空发 General）">
+          </div>
         </div>
 
         <div v-else-if="notificationChannel === 'smtp'" class="resource-alert-rule">
